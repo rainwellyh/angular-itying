@@ -21,7 +21,8 @@ export class SearchComponent implements OnInit {
   }
 
   doSearch(){
-    if(this.historyList.indexOf(this.keywords) == -1){
+    //不存在重复的，并且不为空
+    if(this.historyList.indexOf(this.keywords) == -1 && this.keywords!=''){
       this.historyList.push(this.keywords);
       this.storage.set('searchlist',this.historyList);
     }
@@ -31,8 +32,7 @@ export class SearchComponent implements OnInit {
   }
 
   deleteHistory(key){
-    console.log(key);
     this.historyList.splice(key,1);
-    this.storage.remove(key);
+    this.storage.set('searchlist', this.historyList);
   }
 }
