@@ -1,8 +1,4 @@
 .search{
-  width: 500px;
-  margin: 20px auto;
-  background-color: skyblue;
-}
-.search input {
-  margin-bottom: 10px;
+  width: 600px;
+  margin: 10px auto;
 }

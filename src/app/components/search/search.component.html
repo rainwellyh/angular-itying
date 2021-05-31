@@ -1,10 +1,19 @@
 <div class="search">
-  <input type="text" [(ngModel)]="keywords" />
-  <button (click)="doSearch()">搜索</button>
-  <p-button label="Click" ></p-button>
+  <div class="p-grid p-fluid">
+    <div class="p-col-12 p-md-4">
+        <div class="p-inputgroup">
+            <input type="text" pInputText placeholder="Keyword" [(ngModel)]="keywords">
+            <button type="button" pButton pRipple label="Search" (click)="doSearch()"></button>
+        </div>
+    </div>
+  </div>
   <hr>
 
   <ul>
-    <li>liebiao</li>
+    <li *ngFor="let item of historyList;
+        let key = index;">{{item}} --- <button (click)="deleteHistory(key)">X</button></li>
   </ul>
+  <div class="p-d-flex p-ai-center">
+    <p-chip label="这是一个可删除的biao" [removable]="true"></p-chip>
+  </div>
 </div>
