@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import { ChipModule } from "primeng/chip"; //小标签
+import { AppRoutingModule } from './app-routing.module'; //路由模块
 
 import { AppComponent } from './app.component';
 import { NewsComponent } from './components/news/news.component';
@@ -33,6 +34,7 @@ import { StorageService } from './services/storage.service';
     InputTextModule,
     ButtonModule,
     ChipModule,
+    AppRoutingModule,
   ],
   providers: [StorageService],
   bootstrap: [AppComponent]
